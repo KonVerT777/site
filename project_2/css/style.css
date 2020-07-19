@@ -1530,6 +1530,7 @@ article > a.logo-link {
 
     .page-navigation-list li {
         height: 20px;
+        width: 70px;
         text-align: center;
         background-color: #111;
         margin-top: 2px;
