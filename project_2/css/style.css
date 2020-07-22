@@ -379,6 +379,7 @@ section.carusel {
     font-weight: 800;
     font-style: normal;
     text-transform: uppercase;
+    border: 2px solid transparent;
 }
 
 .carusel-content-start:hover {
@@ -607,6 +608,7 @@ section.carusel {
     font-style: normal;
     text-transform: uppercase;
     color: #fff;
+    border: 2px solid transparent;
 }
 
 .page-aside-btn:hover {
@@ -751,6 +753,7 @@ section.carusel {
     font-weight: 800;
     font-style: normal;
     text-transform: uppercase;
+    border: 3px solid transparent;
 }
 
 .page-project-btn:hover {
@@ -838,11 +841,13 @@ section.carusel {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .video-item {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .video-wrp {
@@ -1204,6 +1209,10 @@ section.carusel {
     fill: #c7b299;
 }
 
+.posts-change-pagination:active {
+    fill: #070707;
+}
+
 .partners {
     width: 100%;
     background-image: url(../img/bg_footer_1.jpg);
@@ -1484,10 +1493,14 @@ article > a.logo-link {
     .page-header {
         width: 100%;
         margin: 0;
-        max-height: 220px;
+        max-height: 200px;
         background-size: 100%;
         background-color: transparent;
         min-height: 0;
+    }
+
+    .page-navigation-list {
+        height: 0;
     }
 
     .logo-link {
@@ -1502,22 +1515,23 @@ article > a.logo-link {
     .page-navigation {
         margin: 0;
         position: relative;
+        flex-direction: row-reverse;
+        margin-right: 50px;
     }
 
     label {
         position: absolute;
-        margin-top: 40px;
-        margin-left: 10px;
     }
 
     label,
     #page-navigation-list {
         display: block;
-        width: 80px;
-        height: 80px;
+        width: 40px;
+        height: 40px;
         background-image: url(../img/open-menu.png);
         background-repeat: no-repeat;
         background-size: 50%;
+        background-position: 60% 50%;
     }
 
     .page-navigation-list {
@@ -1534,6 +1548,14 @@ article > a.logo-link {
         text-align: center;
         background-color: #111;
         margin-top: 2px;
+        padding: 0 10px;
+    }
+
+    input[type="checkbox"]:checked ~ .page-navigation-list {
+        visibility: visible;
+        height: auto;
+        top: 67px;
+        left: -340px;
     }
 
     .page-basket {
